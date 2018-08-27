@@ -1,3 +1,16 @@
 /include/ "system-conf.dtsi"
 / {
+    reserved-memory {
+        #address-cells = <1>;
+        #size-cells = <1>;
+        ranges;
+
+        nvdla_dma: drm-dma@0x30000000 {
+            no-map;
+            reg = <0x30000000 0x3FFFFFFF>;
+        }; 
+    };
+    @nvdla_small_0 {
+        compatible = "nvidia,nvdla_2";
+    };
 };
